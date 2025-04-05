@@ -4,7 +4,7 @@ const score = 400
 const balance = new Number(100)
 // console.log(balance);         //output = Number:100
 
-// console.log(balance.toString().length);
+// console.log(balance.toString().length);  //output =3  ,  total numbers
 // console.log(balance.toFixed(1));  //decimal like 100.0
 
 const otherNumber = 123.8966
