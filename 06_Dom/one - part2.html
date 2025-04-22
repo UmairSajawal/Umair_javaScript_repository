@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning part-2</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+
+
+<!-- Note: setAttribute in js always override-->
+<!-- Note: querySelector in js only select first tag or etc... like if querySelector('h2') only select first h2 tag./ document.querySelector('.heading') -->
+<!-- Note: querySelectorAll in js select all tag or etc... file but tell that which thing apply on which node like 
+if 
+const = tempList = document.querySelectorAll('li') 
+tempList[0].style.color = 'yellow'   // write node[...] on which applying changes
+
+//for more knowledge watch video or read docs
+-->
+
+
+
+<body class="bg-black">
+    <div>
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+</body>
+</html>
