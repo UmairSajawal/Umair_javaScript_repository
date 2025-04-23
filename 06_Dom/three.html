@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main";   // add class with name 'main' in div tag
+    
+    // div.id = "divId";     // simply add id with name 'divId' in div tag
+    
+    div.id = Math.round(Math.random() * 10 + 1)   // add id with (tricky method) with random number between 1 to 10
+    div.setAttribute("title", "generated-title")  // add title with name 'generated-title' in div tag
+    div.style.backgroundColor = "green"           // add background color with name 'green' in div tag
+    div.style.padding = "12px"                    // add padding with name '12px' in div tag
+
+    // div.innerText = "Chai aur code"           // add inner text with name 'Chai aur code' in div tag
+    // Note: setAttribute() or similar method more preferable to use instead of innerText, className, ...., because sometime it overwrites the value.
+    
+     //same working method as innerText on upper line
+    const addText = document.createTextNode("Chai aur code")  // add text with name 'Chai aur code' in div tag 
+    div.appendChild(addText)  // append or attach the text to the div tag
+    
+    // Note: These are styling are not shown on page because these are stored in memory,
+    // for display on page attach the child or other like:
+    document.body.appendChild(div)  // append or attach the div tag to the body tag of html page
+    // All styling are shown on the page.
+</script>
+</html>
