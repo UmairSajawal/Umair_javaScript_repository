@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`   // This way is not recommended, not preferable way to entry, time taken and other problems.
+        document.querySelector('.language').appendChild(li)  
+    }   // Block scope not accessible for outside the {}.
+    addLanguage("python");
+    addLanguage("typescript");
+
+    // Now add language in Optimize way:
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName)); // This way is recommended, preferable way to entry, time taken and other problems.
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('golang');
+
+    // Edit second li element:
+    const secondLang = document.querySelector("li:nth-child(2)") // This will select the second li element.
+    console.log(secondLang); 
+    // secondLang.innerHTML = "Mojo" // This will change the inner html of the second li element.
+    const newLi = document.createElement('li');
+    newLi.textContent = "Mojo";
+    secondLang.replaceWith(newLi); // This will replace the second li element with the new li element.
+
+    // Edit first li element:
+    const firstLang = document.querySelector("li:first-child"); // This will select the first li element.
+    firstLang.outerHTML = '<li>Kotlin</li>'; // replace the text of first li element with another method.
+
+    // Remove last li element:
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+</script>
+</html>
