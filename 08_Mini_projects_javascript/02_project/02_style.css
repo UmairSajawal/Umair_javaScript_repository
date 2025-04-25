@@ -1,8 +1,19 @@
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+}
 .container {
     width: 575px;
     height: 825px;
-    background-color: #797978;
-    padding-left: 30px;
+    background-color: #131f27;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 9px rgba(0, 0, 0, 0.7);
 }
 #height,
 #weight {
@@ -12,24 +23,26 @@
 }
 
 #weight-guide {
-    margin-left: 75px;
-    margin-top: 25px;
+    margin-top: 60px;
 }
 
-#results {
+#results,
+#resultsMsg {
     font-size: 35px;
-    margin-left: 90px;
+    margin-left: 10px;
     margin-top: 20px;
-    color: rgb(241, 241, 241);
+    color: red;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 button {
     width: 150px;
     height: 35px;
-    margin-left: 90px;
     margin-top: 25px;
     background-color: #fff;
-    padding: 1px 30px;
+    padding: 1px 10px;
     border-radius: 8px;
     color: #212121;
     text-decoration: none;
