@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umair Sajawal</title>
+</head>
+<body>
+    <h1>JavaScript Code</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setInterval(function(){
+    //    console.log("Umair Coder", Date.now())
+    //}, 1000)
+
+    /*const sayDate = function(str){
+        console.log(str, Date.now())
+    }
+    // setInterval(sayDate, 1000, "Hi...");
+    // remove the setInterval timeout:
+    const intervalId = setInterval(sayDate, 1000, "Hi...");
+    clearInterval(intervalId);*/
+
+    // Task: click on start button to start printing and click on stop to stop the printing.
+    let intervalId; // declare globally so both functions can access it
+
+    document.querySelector('#start').addEventListener('click', function(){
+        const sayDateName = function(str){
+            console.log(str, Date.now())
+        }
+        // prevent multiple intervals from stacking
+        if (!intervalId) {
+            intervalId = setInterval(sayDateName, 1000, "Umair...");
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId);
+        intervalId = null; // reset so start can work again
+        console.log("Stopped");
+    });
+</script>
+</html>
