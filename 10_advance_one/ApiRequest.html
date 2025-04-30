@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: green;">
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    // 'json formatter' tool to covert api data in easy way
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();   // new object
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);
+    if(xhr.readyState === 4){
+
+        // 'this' keyword is important in this case
+        //const data = this.responseText;
+        //console.log(typeof data);  //Output: String
+
+        // 'this' keyword is important in this case
+        const data = JSON.parse(this.responseText); // Note: before use of JSON.parse() the type of responseText is string so parse() converts string into (object) JSON
+        console.log(typeof data);  //Output: Object
+        console.log(data.followers);  
+    }
+    };
+    xhr.send();
+</script>
+</html>
